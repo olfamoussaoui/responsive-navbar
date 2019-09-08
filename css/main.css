@@ -6,80 +6,91 @@ body {
     font-family: 'Montserrat';
 }
 
+.backdrop {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .land {
     background: url('/images/background2.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    overflow-x: hidden;
-    height: 100%;
-}
-
-nav {
-    display: grid;
-    grid-template-columns: auto 40px;
-    padding: 2em;
-}
-
-.toggle {
-    display: block;
-    width: 30px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.toggle div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px;
-    transition: all 0.5ms ease-in;
-}
-
-.nav-links {
-    display: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    padding-top: 6em;
-    height: 8vh;
+    height: calc(100vh - 1.5em);
+    padding: .8em 1.2em;
 }
 
 a {
     text-decoration: none;
 }
-
-.nav-links a {
-    text-transform: uppercase;
-    font-size: 2em;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ #logo {
+    font-size: 2rem;
     font-weight: bold;
-    text-align: center;
-    display: block;
-    padding: 1.5em 3em;
-    color: #000;
+    color: #fff;
+ }
+ 
+ header {
+     display: flex;
+     justify-content: space-between;
+ }
+
+.menu {
+    width: 25px;
+    margin: 30%;
 }
 
-#logo {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #fff
-}
-
-.active {
-    position: absolute;
-    display: block;
-    background: #fff;
+ .hide-mobile {
+     display: none;
+ }
+ nav ul {
+     position: fixed;
+     width: 60%;
+     top: 0;
+     right: 0;
+     text-align: left;
+     background: #fff;
+     height: 100vh;
+     padding-top: 3em;
+     z-index: 101;
+ }
+ nav ul a{
+    color: black;
     width: 100%;
-    left: 0;
-    top: 0;
-    height: 100%;
+    display: block;
+    padding: 1em 2em;
 }
 
+nav ul a:hover{
+    background-color: #F49D37;
+}
+
+.exit-btn {
+    margin-bottom: 1em;
+    margin-top: -1.3em;
+    text-align: right;
+    padding: 0 1.4em;
+}
+
+.exit-btn img {
+    width: 15px;
+    cursor: pointer;
+}
 .wrap {
     padding: 1em 1.4em;
 }
 
-h1 {
+.wrap h1 {
     margin: 0;
     font-size: 3.5em;
 }
@@ -92,7 +103,7 @@ h1 {
     display: block;
     color: #fff;
     border: none;
-    background: #BB4628;
+    background: #F49D37;
     height: 2em;
     padding: 8px 50px;
     font-size: 1.2em;
@@ -100,48 +111,44 @@ h1 {
     font-weight: bold;
     margin: 2em 0;
 }
-
-.close div{
-    background-color: #000;
-}
-.close div:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.close div:nth-child(2) {
-    opacity: 0;
-}
-
-.close div:nth-child(3){
-    transform: rotate(45deg) translate(-5px, -6px);  
-}
-
 @media only screen and (min-width: 768px) {
-    .toggle{
+    .show-desktop {
+        display: block;
+        margin: 0 auto 13% auto;
+    }
+    .hide-desktop {
         display: none;
+    }
+    nav {
+        grid-template-columns: 100px auto;
+    }
+    nav ul {
+        position: inherit;
+        width: auto;
+        height: auto;
+        display: flex;
+        background: none;
+        padding: 0 3em;
+        justify-content: flex-end;
+    }
+    nav ul li {
+        float: left;
+    }
+    nav ul li a {
+        color: #fff;
+        background-color: inherit;
+        text-align: right;
+        padding: 1em 2em;
+    }
+
+    nav ul li a:hover {
+        background-color: inherit;
     }
     .wrap {
         padding: 4em;
     }
     .wrap p {
         width: 50%;
-    }
-    nav {
-        grid-template-columns: 100px auto;
-    }
-    .nav-links {
-        display: flex;
-        background: none;
-        padding: 0 3em;
-        justify-content: flex-end;
-    }
-    .nav-links a {
-        font-size: 1em;
-        background: none;
-        color: #fff;
-        padding: .3em 1em;
-        font-size: 0.8em;
-        font-weight: inherit;
     }
     .cta {
         width: 20%;

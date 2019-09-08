@@ -11,41 +11,35 @@
 </head>
 
 <body>
+    <div class="backdrop"></div>
     <div class="land">
-        <nav>
+        <header>
             <a href="#" id="logo">Some.</a>
-            <div class="toggle">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">about us</a></li>
-                <li><a href="#">services</a></li>
-                <li><a href="#">contact</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <a href="#" class="hide-desktop">
+                    <img src="/images/menu.svg" alt="toggle menu" class="menu" id="menu">
+                </a>
+
+                <ul id="nav-links" class="show-desktop hide-mobile">
+                    <li id="exit" class="exit-btn hide-desktop">
+                        <img src="/images/cancel.svg" alt="exit menu" class="close">
+                    </li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
         <div class="wrap">
-            <h1>Olfa Moussaoui</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia vel qui nulla suscipit placeat, rerum
+            <h1 class="title">Olfa Moussaoui</h1>
+            <p class="subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia vel qui nulla suscipit placeat, rerum
                 corrupti ex iusto non nemo ipsam iure quod quas quaerat praesentium commodi dolorum eum hic.</p>
             <a href="#" class="cta">my portfolio</a>
         </div>
     </div>
 </body>
-<script>
-    (function () {
-        let menu = document.querySelector('ul'),
-            menulink = document.querySelector('.toggle'),
-            burger = document.querySelector('.close')
-
-        menulink.addEventListener('click', function (e) {
-            // toggle navbar
-            menu.classList.toggle('active')
-            // toggle animation
-            menulink.classList.toggle('close')
-        });
-    })();
-</script>
+<script src="/scripts/main.js"></script>
 
 </html>
