@@ -29,63 +29,69 @@ body {
 a {
     text-decoration: none;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
- #logo {
+
+#logo {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
- }
- 
- header {
-     display: flex;
-     justify-content: space-between;
- }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
 
 .menu {
     width: 25px;
     margin: 30%;
 }
 
- .hide-mobile {
-     display: none;
- }
- nav ul {
-     position: fixed;
-     width: 60%;
-     top: 0;
-     right: 0;
-     text-align: left;
-     background: #fff;
-     height: 100vh;
-     padding-top: 3em;
-     z-index: 101;
- }
- nav ul a{
+.hide-mobile {
+    display: none;
+}
+
+nav ul {
+    position: fixed;
+    width: 60%;
+    top: 0;
+    right: 0;
+    text-align: left;
+    background: #fff;
+    height: 100vh;
+    padding-top: 3em;
+    z-index: 101;
+}
+
+nav ul a {
     color: black;
     width: 100%;
     display: block;
     padding: 1em 2em;
 }
 
-nav ul a:hover{
+nav ul a:hover {
     background-color: #F49D37;
 }
 
 .exit-btn {
     margin-bottom: 1em;
     margin-top: -1.3em;
-    text-align: right;
+    float: right;
     padding: 0 1.4em;
+    width: 15px;
 }
 
 .exit-btn img {
     width: 15px;
     cursor: pointer;
 }
+
 .wrap {
     padding: 1em 1.4em;
 }
@@ -99,29 +105,84 @@ nav ul a:hover{
     font-size: 1.1em;
     line-height: 1.5em;
 }
+
 .cta {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #fff;
     border: none;
     background: #F49D37;
     height: 2em;
-    padding: 8px 50px;
+    padding: 10px 50px;
     font-size: 1.2em;
     text-align: center;
     font-weight: bold;
     margin: 2em 0;
 }
+
+.modal {
+    position: fixed;
+    display: none;
+    z-index: 200;
+    top: 20%;
+    left: 15%;
+    width: 70%;
+    background: white;
+    /* border: 1px solid #ccc; */
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    height: 40%;
+    border-radius: 5px;
+}
+.closeBtn {
+    color: #fff;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: .3em;
+}
+.closeBtn:hover, .closeBtn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    background: #34495e;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 5px 5px 0 0 ;
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 3em;
+}
+.modal-body {
+    padding: 10px 20px;
+    color: #333;
+}
+.modal-body p {
+    font-weight: 700;
+    font-size: 20px
+}
+.acceptBtn { 
+    border-radius: 5px;
+    padding: 5px 50px;
+}
+
 @media only screen and (min-width: 768px) {
     .show-desktop {
         display: block;
         margin: 0 auto 13% auto;
     }
+
     .hide-desktop {
         display: none;
     }
+
     nav {
         grid-template-columns: 100px auto;
     }
+
     nav ul {
         position: inherit;
         width: auto;
@@ -131,9 +192,11 @@ nav ul a:hover{
         padding: 0 3em;
         justify-content: flex-end;
     }
+
     nav ul li {
         float: left;
     }
+
     nav ul li a {
         color: #fff;
         background-color: inherit;
@@ -144,13 +207,23 @@ nav ul a:hover{
     nav ul li a:hover {
         background-color: inherit;
     }
+
     .wrap {
         padding: 4em;
     }
+
     .wrap p {
         width: 50%;
     }
+
     .cta {
         width: 20%;
+    }
+    .modal {
+        width: 50%;
+        left: 25%;
+    }
+    .acceptBtn {
+        float: right;
     }
 }

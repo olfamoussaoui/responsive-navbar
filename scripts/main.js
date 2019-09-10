@@ -1,9 +1,12 @@
 
 
-let backdrop = document.querySelector(".backdrop"),
+let backdrop = document.querySelector('.backdrop'),
     menu = document.querySelector('#menu'),
     nav = document.querySelector('#nav-links'),
-    exit = document.querySelector('#exit')
+    exit = document.querySelector('#exit'),
+    profileBtn =  document.querySelector('.cta'),
+    modal = document.querySelector('.modal'),
+    exitModal = document.querySelector('.closeBtn')
 
 // Adding sidebar
 menu.addEventListener('click', function (e) {
@@ -20,6 +23,16 @@ exit.addEventListener('click', function (e) {
 
 backdrop.addEventListener('click', function(e){
     nav.classList.add('hide-mobile');
+    modal.style.display = 'none';
     backdrop.style.display = 'none';
 });
 
+// Adding Modal
+profileBtn.addEventListener('click', function(e){
+    modal.style.display = 'block'
+    backdrop.style.display = 'block'
+})
+exitModal.addEventListener('click', function(e){
+    modal.style.display = 'none'
+    backdrop.style.display = 'none'
+})
